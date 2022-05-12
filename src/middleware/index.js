@@ -29,7 +29,7 @@ exports.passcheck=async(req, res, next) => {
 }
 exports.validemail=async(req, res, next) => {
     try{
-        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(req.body.email)==true){
+        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(req.body.email)){
             next();
         }else{
             return res.status(500).send({ message:"Invalid email address"})
