@@ -1,4 +1,5 @@
 require("./db/connection");
+const cors=require('cors')
 const express = require("express");
 const movieRouter = require("./movie/movieRoutes");
 const userRouter = require("./user/userRoutes");
@@ -10,6 +11,7 @@ const port = process.env.PORT || 5000;
 // routes set up for movieRoutes.js and userRoutes.js
 app.use(express.json());
 
+app.use(cors())
 app.use(movieRouter);
 
 app.use(userRouter);
